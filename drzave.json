@@ -1,10 +1,162 @@
-{"naziv":"Palau","iso_3116_alpha_3":"PLW","glavni_grad":"Ngerulmud","jezici":["engleski", "palauski", "tobijski", "sonsorolezijski"],"valuta":"USD","pozivni_broj":"+680","top_level_domena":".pw","naziv_himne":"Belau rekid","povrsina":459,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Palau"}
-{"naziv":"Belgija","iso_3116_alpha_3":"BEL","glavni_grad":"Brussels","jezici":["nizozemski", "francuski", "njemački"],"valuta":"EUR","pozivni_broj":"+32","top_level_domena":".be","naziv_himne":"La Brabançonne","povrsina":30689,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Belgium"}
-{"naziv":"Mauricijus","iso_3116_alpha_3":"MUS","glavni_grad":"Port Louis","jezici":[],"valuta":"MUR","pozivni_broj":"+230","top_level_domena":".mu","naziv_himne":"Stella Clavisque Maris Indici","povrsina":2040,"strana_voznje":"lijeva","wikipedia":"https://en.wikipedia.org/wiki/Mauritius"}
-{"naziv":"Burundi","iso_3116_alpha_3":"BDI","glavni_grad":"Bujumbura","jezici":["francuski", "kirundi"],"valuta":"BIF","pozivni_broj":"+257","top_level_domena":".bi","naziv_himne":"Burundi Bwacu","povrsina":27834,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Burundi"}
-{"naziv":"Honduras","iso_3116_alpha_3":"HND","glavni_grad":"Tegucigalpa","jezici":["španjolski"],"valuta":"HNL","pozivni_broj":"+504","top_level_domena":".hn","naziv_himne":"Himno Nacional de Honduras","povrsina":112492,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Honduras"}
-{"naziv":"Hrvatska","iso_3116_alpha_3":"HRV","glavni_grad":"Zagreb","jezici":["hrvatski"],"valuta":"HRK","pozivni_broj":"+385","top_level_domena":".hr","naziv_himne":"Lijepa naša domovino","povrsina":56594,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Croatia"}
-{"naziv":"Nepal","iso_3116_alpha_3":"NPL","glavni_grad":"Kathmandu","jezici":["nepalski"],"valuta":"NPR","pozivni_broj":"+977","top_level_domena":".np","naziv_himne":"Sayaun Thunga Phulka","povrsina":147516,"strana_voznje":"lijeva","wikipedia":"https://en.wikipedia.org/wiki/Nepal"}
-{"naziv":"Novi Zeland","iso_3116_alpha_3":"NZL","glavni_grad":"Wellington","jezici":["engleski", "maorski", "novozelandski znakovni"],"valuta":"NZD","pozivni_broj":"+64","top_level_domena":".nz","naziv_himne":"God Defend New Zealand","povrsina":268021,"strana_voznje":"lijeva","wikipedia":"https://en.wikipedia.org/wiki/New_Zealand"}
-{"naziv":"Gabon","iso_3116_alpha_3":"GAB","glavni_grad":"Libreville","jezici":["francuski"],"valuta":"XAF","pozivni_broj":"+241","top_level_domena":".ga","naziv_himne":"La Concorde","povrsina":267667,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Gabon"}
-{"naziv":"Ekvador","iso_3116_alpha_3":"ECU","glavni_grad":"Quito","jezici":["španjolski"],"valuta":"USD","pozivni_broj":"+593","top_level_domena":".ec","naziv_himne":"Salve, Oh Patria","povrsina":283561,"strana_voznje":"desna","wikipedia":"https://en.wikipedia.org/wiki/Ecuador"}
+{
+   "drzave":[
+      {
+         "naziv":"Palau",
+         "iso_3116_alpha_3":"PLW",
+         "glavni_grad":"Ngerulmud",
+         "sluzbeni_jezici":[
+            "engleski",
+            "palauski",
+            "tobijski",
+            "sonsorolezijski"
+         ],
+         "valuta":"USD",
+         "pozivni_broj":"+680",
+         "top_level_domena":".pw",
+         "naziv_himne":"Belau rekid",
+         "povrsina":459,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Palau"
+      },
+      {
+         "naziv":"Belgija",
+         "iso_3116_alpha_3":"BEL",
+         "glavni_grad":"Brussels",
+         "sluzbeni_jezici":[
+            "nizozemski",
+            "francuski",
+            "njemački"
+         ],
+         "valuta":"EUR",
+         "pozivni_broj":"+32",
+         "top_level_domena":".be",
+         "naziv_himne":"La Brabançonne",
+         "povrsina":30689,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Belgium"
+      },
+      {
+         "naziv":"Mauricijus",
+         "iso_3116_alpha_3":"MUS",
+         "glavni_grad":"Port Louis",
+         "sluzbeni_jezici":[
+            null
+         ],
+         "valuta":"MUR",
+         "pozivni_broj":"+230",
+         "top_level_domena":".mu",
+         "naziv_himne":"Stella Clavisque Maris Indici",
+         "povrsina":2040,
+         "strana_voznje":"lijeva",
+         "wikipedia":"https://en.wikipedia.org/wiki/Mauritius"
+      },
+      {
+         "naziv":"Burundi",
+         "iso_3116_alpha_3":"BDI",
+         "glavni_grad":"Bujumbura",
+         "sluzbeni_jezici":[
+            "francuski",
+            "kirundi"
+         ],
+         "valuta":"BIF",
+         "pozivni_broj":"+257",
+         "top_level_domena":".bi",
+         "naziv_himne":"Burundi Bwacu",
+         "povrsina":27834,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Burundi"
+      },
+      {
+         "naziv":"Honduras",
+         "iso_3116_alpha_3":"HND",
+         "glavni_grad":"Tegucigalpa",
+         "sluzbeni_jezici":[
+            "španjolski"
+         ],
+         "valuta":"HNL",
+         "pozivni_broj":"+504",
+         "top_level_domena":".hn",
+         "naziv_himne":"Himno Nacional de Honduras",
+         "povrsina":112492,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Honduras"
+      },
+      {
+         "naziv":"Hrvatska",
+         "iso_3116_alpha_3":"HRV",
+         "glavni_grad":"Zagreb",
+         "sluzbeni_jezici":[
+            "hrvatski"
+         ],
+         "valuta":"HRK",
+         "pozivni_broj":"+385",
+         "top_level_domena":".hr",
+         "naziv_himne":"Lijepa naša domovino",
+         "povrsina":56594,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Croatia"
+      },
+      {
+         "naziv":"Nepal",
+         "iso_3116_alpha_3":"NPL",
+         "glavni_grad":"Kathmandu",
+         "sluzbeni_jezici":[
+            "nepalski"
+         ],
+         "valuta":"NPR",
+         "pozivni_broj":"+977",
+         "top_level_domena":".np",
+         "naziv_himne":"Sayaun Thunga Phulka",
+         "povrsina":147516,
+         "strana_voznje":"lijeva",
+         "wikipedia":"https://en.wikipedia.org/wiki/Nepal"
+      },
+      {
+         "naziv":"Novi Zeland",
+         "iso_3116_alpha_3":"NZL",
+         "glavni_grad":"Wellington",
+         "sluzbeni_jezici":[
+            "engleski",
+            "maorski",
+            "novozelandski znakovni"
+         ],
+         "valuta":"NZD",
+         "pozivni_broj":"+64",
+         "top_level_domena":".nz",
+         "naziv_himne":"God Defend New Zealand",
+         "povrsina":268021,
+         "strana_voznje":"lijeva",
+         "wikipedia":"https://en.wikipedia.org/wiki/New_Zealand"
+      },
+      {
+         "naziv":"Gabon",
+         "iso_3116_alpha_3":"GAB",
+         "glavni_grad":"Libreville",
+         "sluzbeni_jezici":[
+            "francuski"
+         ],
+         "valuta":"XAF",
+         "pozivni_broj":"+241",
+         "top_level_domena":".ga",
+         "naziv_himne":"La Concorde",
+         "povrsina":267667,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Gabon"
+      },
+      {
+         "naziv":"Ekvador",
+         "iso_3116_alpha_3":"ECU",
+         "glavni_grad":"Quito",
+         "sluzbeni_jezici":[
+            "španjolski"
+         ],
+         "valuta":"USD",
+         "pozivni_broj":"+593",
+         "top_level_domena":".ec",
+         "naziv_himne":"Salve, Oh Patria",
+         "povrsina":283561,
+         "strana_voznje":"desna",
+         "wikipedia":"https://en.wikipedia.org/wiki/Ecuador"
+      }
+   ]
+}
