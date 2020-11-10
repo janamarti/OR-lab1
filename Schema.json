@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://or.fer.unizg.hr/ordrzave.json",
+  "type": "array",
+  "title": "OR Države",
+  "description": "Skup podataka o državama za laboratorijske vježbe iz predmeta Otvoreno računarstvo.",
+  "items": {
+    "type": "object",
+	"title": "država",
+	"description": "Objekt koji opisuje jednu državu",
+	"required": [
+		"naziv",
+        "iso_3116_alpha_3",
+        "glavni_grad",
+        "jezici",
+        "valuta",
+        "pozivni_broj",
+        "top_level_domena",
+        "naziv_himne",
+        "povrsina",
+        "strana_voznje",
+        "wikipedia_handle"
+    ],
+    "properties": {
+      "naziv": {
+        "type": "string",
+		"title": "Naziv države",
+		"description": "Skraćeni naziv države, a ne puni, službeni naziv"
+      },
+      "iso_3116_alpha_3": {
+        "type": "string",
+		"title": "ISO 3116 alpha-3 kôd države",
+		"description": "Troslovni kôd države opisan ISO 3116 alpha-3 standardom"
+      },
+      "glavni_grad": {
+        "type": "string",
+		"title": "Glavni grad",
+		"description": "Glavni grad"
+      },
+      "jezici": {
+        "type": "array",
+		"title": "Službeni jezici",
+		"description": "Službeni jezici",
+		"required": [
+            "iso_639",
+            "naziv"
+          ],
+        "items": {
+          "type": "object",
+		  "title": "Službeni jezici",
+		  "description": "Službeni jezici",
+          "properties": {
+            "iso_639": {
+              "type": "string",
+			  "title": "ISO 639 kôd jezika",
+			  "description": "Troslovni kôd jezika opisan ISO 639 standardom"
+            },
+            "naziv": {
+              "type": "string",
+			  "title": "Naziv jezika",
+			  "description": "Naziv jezika"
+            }
+          }
+        }
+      },
+      "valuta": {
+        "type": "string",
+		"title": "Valuta",
+		"description": "Službena valuta države"
+      },
+      "pozivni_broj": {
+        "type": "string",
+		"title": "Pozivni broj",
+		"description": "pozivni broj ili predbroj države, propisan standardima E.123 i E.164. tijela ITU-T"
+      },
+      "top_level_domena": {
+        "type": "string",
+		"title": "Top level domena",
+		"description": "Top-level ili vršna domena propisana od IANA-e, odgovara ISO 3116 alpha-2 dvoslovnom kôdu"
+      },
+      "naziv_himne": {
+        "type": "string",
+		"title": "Naziv himne",
+		"description": "Naziv himne"
+      },
+      "povrsina": {
+        "type": "integer",
+		"title": "Površina",
+		"description": "Površina u kilometrima četvornim"
+      },
+      "strana_voznje": {
+        "type": "string",
+		"title": "Strana vožnje",
+		"description": "Strana vožnje jedinstvena unutar granica jedne države, može biti ili lijeva ili desna"
+      },
+      "wikipedia_handle": {
+        "type": "string",
+		"title": "Wiki handle",
+		"description": "jedinstveni Wikipedia identifikator stranice"
+      }
+    }
+  }
+}
