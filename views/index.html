@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <title>Države</title>
+    <meta name="description" content="podaci vezani uz države">
+    <meta name="author" content="Jana Martinović">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/styles/main.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+
+<body class="content">
+    <h1>Države</h1>
+    <h3>Licencija</h3>
+    <p>Creative Commons Zero v1.0 Universal</p>
+
+    <h3>Opis skupa podataka</h3>
+    <p>Ovo su podaci vezani uz države. 
+    U ovom skupu podataka smatra se da je država država ako je članica UN-a i dodatno Vatikan i Kosovo.
+    Za svaku od država navedene su osnovne činjenice o njoj poput glavnog grada, površine ili himne.
+    Svaka država može imati jedan ili više službenih jezika. 
+    Država u ustavu propisuje svoj službeni ili službene jezike. 
+    Ukoliko država ne propiše službene jezike, smatra se da ih nema. </p>
+
+    <h3>jezik</h3>
+    <p> <strong>hrvatski</strong>, ali uz napomenu: dio podataka je na originalnom jeziku, a to su </p>
+        <ol class="neparni"> 
+        <li>himna, zato što ne postoji službeni prijevod naziva svih himni na hrvatski jezik, a to bi bio pothvat za koji autorica nema kompetencije </li>
+        <li>grad, u hrvatskom jeziku imena gradova se, za razliku od imena država <strong>ne</strong> prevode: glavni grad države Luksemburg je grad Luxembourg. Iznimke su gradovi koji su zbog povijesnih razloga značajno dugo prevađani na hrvatski: Pariz, Beč, Rim... Odlučeno je da će se, bez obzira na to koliko takva iznimka bila široko upotrebljavana na hrvatskom jeziku, u ovim podacima <strong>uvijek</strong> koristiti <strong>originalni</strong> naziv grada (Paris, Wien, Roma...) kako bi se izbjegla mogućnost pogreške.</li>
+        </ol>
+    
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th>ATRIBUTI VEZANI UZ DRŽAVE</th>
+                    <th>OPIS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="parni">
+                    <td>iso_3116_alpha_3</td>
+                    <td>troslovni kôd neke države, propisan ISO 3116 standardom</td>
+                </tr>
+                <tr class="neparni">
+                    <td>glavni_grad</td>
+                    <td>grad u kojem je izvršna, zakonodavna i (ili) sudska vlast</td>
+                </tr>
+                <tr class="parni">
+                    <td>naziv</td>
+                    <td>naziv države na hrvatskom jeziku</td>
+                </tr>
+               <tr class="neparni">
+                    <td>valuta</td>
+                    <td>troslovni kôd valute, propisan ISO 4217 standardom</td>
+                </tr>
+                <tr class="parni">
+                    <td>pozivni_broj</td>
+                    <td>predbroj, propisani standardima E.123 i E.164. tijela ITU-T</td>
+                </tr>
+                <tr class="neparni">
+                    <td>top_level_domena</td>
+                    <td>propisana od IANA-e, odgovara ISO 3116 alpha-2 dvoslovnom kôdu</td>
+                </tr>
+                <tr class="parni">
+                    <td>naziv_himne</td>
+                    <td>naziv himne je zapisan u originalnom jeziku te himne (nije prevedeno)</td>
+                </tr>
+                <tr class="neparni">
+                    <td>povrsina</td>
+                    <td>površina države u kilometrima četvornim</td>
+                </tr>
+                <tr class="parni">
+                    <td>strana_voznje</td>
+                    <td>može biti ili lijeva ili desna, jedinstvena unutar granica jedne države prema Ženevskoj konvenciji o cestovnom prometu iz 1952.</td>
+                </tr>
+                <tr class="neparni">
+                    <td>wikipedia_handle</td>
+                    <td>jedinstveni Wikipedia identifikator stranice</td>
+                </tr>
+            </tbody>  
+        </table>
+
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th>ATRIBUTI VEZANI UZ JEZIKE</th>
+                    <th>OPIS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="parni">
+                    <td>iso_639</td>
+                    <td>troslovni kôd jezika propisan ISO 639-1, 639-2 i 639-3 standardom</td>
+                </tr>
+                <tr class="neparni">
+                    <td>naziv</td>
+                    <td>naziv jezika napisan na hrvatskom jeziku</td>
+                </tr>
+            </tbody>
+        </table>
+    <h1>Prezumi podatke o državama</h1>
+
+    <div class="neparni">
+    <a href="../drzave.csv" download>drzave.csv</a> <br/>
+    <a href="../drzave.json" download>drzave.json</a>
+    </div>
+
+
+</body>
+</html>

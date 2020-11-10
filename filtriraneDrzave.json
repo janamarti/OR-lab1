@@ -1,0 +1,98 @@
+[
+  {
+    "naziv": "Palau",
+    "iso_3116_alpha_3": "PLW",
+    "glavni_grad": "Ngerulmud",
+    "jezici": [
+      {
+        "iso_639": "eng",
+        "naziv": "engleski"
+      },
+      {
+        "iso_639": "pau",
+        "naziv": "palauski"
+      },
+      {
+        "iso_639": "jpn",
+        "naziv": "japanski"
+      },
+      {
+        "iso_639": "tox",
+        "naziv": "tobijski"
+      },
+      {
+        "iso_639": "sov",
+        "naziv": "sonsorolezijski"
+      }
+    ],
+    "valuta": "USD",
+    "pozivni_broj": "+680",
+    "top_level_domena": ".pw",
+    "naziv_himne": "Belau rekid",
+    "povrsina": 459,
+    "strana_voznje": "desna",
+    "wikipedia_handle": "Palau"
+  },
+  {
+    "naziv": "Honduras",
+    "iso_3116_alpha_3": "HND",
+    "glavni_grad": "Tegucigalpa",
+    "jezici": [
+      {
+        "iso_639": "spa",
+        "naziv": "španjolski"
+      }
+    ],
+    "valuta": "HNL",
+    "pozivni_broj": "+504",
+    "top_level_domena": ".hn",
+    "naziv_himne": "Himno Nacional de Honduras",
+    "povrsina": 112492,
+    "strana_voznje": "desna",
+    "wikipedia_handle": "Honduras"
+  },
+  {
+    "naziv": "Novi Zeland",
+    "iso_3116_alpha_3": "NZL",
+    "glavni_grad": "Wellington",
+    "jezici": [
+      {
+        "iso_639": "eng",
+        "naziv": "engleski"
+      },
+      {
+        "iso_639": "mri",
+        "naziv": "maorski"
+      },
+      {
+        "iso_639": "nzs",
+        "naziv": "novozelandski znakovni"
+      }
+    ],
+    "valuta": "NZD",
+    "pozivni_broj": "+64",
+    "top_level_domena": ".nz",
+    "naziv_himne": "God Defend New Zealand",
+    "povrsina": 268021,
+    "strana_voznje": "lijeva",
+    "wikipedia_handle": "New_Zealand"
+  },
+  {
+    "naziv": "Ekvador",
+    "iso_3116_alpha_3": "ECU",
+    "glavni_grad": "Quito",
+    "jezici": [
+      {
+        "iso_639": "spa",
+        "naziv": "španjolski"
+      }
+    ],
+    "valuta": "USD",
+    "pozivni_broj": "+593",
+    "top_level_domena": ".ec",
+    "naziv_himne": "Salve, Oh Patria",
+    "povrsina": 283561,
+    "strana_voznje": "desna",
+    "wikipedia_handle": "Ecuador"
+  }
+]

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Države</title>
+    <meta name="description" content="podaci vezani uz države">
+    <meta name="author" content="Jana Martinović">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+
+</head>
+
+<body class="content">
+
+
+    <h1>Podaci o svim državama</h1>
+
+    <table class="table"> 
+        <tr class="table-header"  >
+            <td  >NAZIV</td>
+            <td  >OZNAKA</td>
+            <td  >GLAVNI GRAD</td>
+            <td  >VALUTA</td>
+            <td  >POZIVNI BROJ</td>
+            <td  >TOP-LEVEL DOMENA</td>
+            <td  >HIMNA</td>
+            <td  >POVRŠINA U km<sup>2</sup></td>
+            <td  >STRANA VOŽNJE</td>
+            <td  >WIKI HANDLE</td>
+            <td colspan="2"  >SLUŽBENI JEZICI</td>
+        </tr>
+    <% var element = 0; %>
+
+    <% for (let drzava of drzave) { %>
+        <% var brojJezika = 0; %>
+        <% var paritet; element%2==0 ? paritet="parni" : paritet="neparni";%>
+        <tr class="<%= paritet%>">
+            <td  ><%=drzava.naziv%></td>
+            <td  ><%= drzava.iso_3116_alpha_3%></td>
+            <td  ><%= drzava.glavni_grad%></td>
+            <td  ><%= drzava.valuta%></td>
+            <td  ><%= drzava.pozivni_broj%></td>
+            <td  ><%= drzava.top_level_domena%></td>
+            <td  ><%= drzava.naziv_himne%></td>
+            <td  ><%= drzava.povrsina%></td>
+            <td  ><%= drzava.strana_voznje%></td>
+            <td  ><%= drzava.wikipedia_handle%></td>
+            
+            <td  > 
+            <% for (let jezik of jezici) { %>
+               <% if(jezik.iso_3116_alpha_3 == drzava.iso_3116_alpha_3){ %>
+                    <%= jezik.naziv%> (<%= jezik.iso_639%>)
+                <% } %> 
+            <% } %>
+            </td>
+        </tr>
+    <%element++; } %>
+    </table>
+
+    <% var filtriraneDrzave = [];
+        filter = filter.toLowerCase();
+
+    for (let drzava of drzave){
+    
+        switch(atribut){
+            case "wildcard": {
+                if(drzava.naziv.toLowerCase().includes(filter) || drzava.iso_3116_alpha_3.toLowerCase().includes(filter) || drzava.glavni_grad.toLowerCase().includes(filter) 
+                || drzava.valuta.toLowerCase().includes(filter) || drzava.pozivni_broj.toLowerCase().includes(filter) || drzava.top_level_domena.toLowerCase().includes(filter) 
+                || drzava.naziv_himne.toLowerCase().includes(filter) || drzava.povrsina.toLowerCase().includes(filter) || drzava.strana_voznje.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                else{
+                    for (jezik of jezici){
+                        if (jezik.iso_3116_alpha_3 == drzava.iso_3116_alpha_3 && (jezik.naziv.toLowerCase().includes(filter) || jezik.iso_639.toLowerCase().includes(filter)))
+                            filtriraneDrzave.push(drzava);
+                    }
+                }
+                break;
+            }
+            case "drzava.naziv":{
+                if(drzava.naziv.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "iso_3116_alpha_3":{
+                if(drzava.iso_3116_alpha_3.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);   
+                break;
+            }
+
+            case "glavni_grad":{
+                if(drzava.glavni_grad.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);  
+                break;
+            }
+            
+            case "Oznaka valute":
+            case "valuta":{
+                console.log("dosli smo ")
+                if(drzava.valuta.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "pozivni_broj":{
+                if(drzava.pozivni_broj.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "top_level_domena":{
+                if(drzava.top_level_domena.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "naziv_himne":{
+                if(drzava.naziv_himne.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "povrsina":{
+                if(drzava.povrsina.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "strana_voznje":{
+                if(drzava.strana_voznje.toLowerCase().includes(filter))
+                    filtriraneDrzave.push(drzava);
+                break;
+            }
+
+            case "jezik.naziv":{
+                for (jezik of jezici){
+                    if (jezik.iso_3116_alpha_3 == drzava.iso_3116_alpha_3 && jezik.naziv.toLowerCase().includes(filter) && !filtriraneDrzave.includes(drzava))
+                        filtriraneDrzave.push(drzava);
+                }
+                break;
+            }
+
+            case "iso_639":{
+                for (jezik of jezici){
+                    if (jezik.iso_3116_alpha_3 == drzava.iso_3116_alpha_3 && jezik.iso_639.toLowerCase().includes(filter) && !filtriraneDrzave.includes(drzava))
+                        filtriraneDrzave.push(drzava);
+                }
+                break;
+            }
+        }
+    }
+    %>
+
+    <h2>filtriraj podatke</h2>
+
+    <form id="filter" method="POST">
+        <label for="atribut">filtriraj prema:</label>
+        
+        <select id="atribut" name="atribut">
+            <option value="wildcard" selected="selected">Svi atributi</option>
+            <option value="drzava.naziv">Naziv države</option>
+            <option value="iso_3116_alpha_3">Oznaka države</option>
+            <option value="glavni_grad">Glavni grad</option>
+            <option vlaue="valuta">Oznaka valute</option>
+            <option value="pozivni_broj">Pozivni broj</option>
+            <option value="top_level_domena">Top level domena</option>
+            <option value="naziv_himne">Naziv himne</option>
+            <option value="povrsina">Površina</option>
+            <option value="strana_voznje">Strana vožnje</option>
+            <option value="jezik.naziv">Službeni jezik</option>
+            <option value="iso_639">Oznaka jezika</option>
+        </select>
+        <br/>
+
+        <label for="">pojam: </label>
+        <input type="text" id="pojam" name="filter" ><br/>
+       
+        <input type="submit" value="Nađi">
+    </form>
+
+
+    <h1>Podaci o državama koji u atributu <u><%=atribut%></u> sadrže podniz <i><%=filter%></i></h1>
+
+    <table class="table"> 
+        <tr class="table-header"  >
+            <td  >NAZIV</td>
+            <td  >OZNAKA</td>
+            <td  >GLAVNI GRAD</td>
+            <td  >VALUTA</td>
+            <td  >POZIVNI BROJ</td>
+            <td  >TOP-LEVEL DOMENA</td>
+            <td  >HIMNA</td>
+            <td  >POVRŠINA U km<sup>2</sup></td>
+            <td  >STRANA VOŽNJE</td>
+            <td  >WIKI HANDLE</td>
+            <td colspan="2"  >SLUŽBENI JEZICI</td>
+        </tr>
+    <% var element = 0; %>
+
+    <% for (let drzava of filtriraneDrzave) { %>
+        <% var brojJezika = 0; %>
+        <% var paritet; element%2==0 ? paritet="parni" : paritet="neparni";%>
+        <tr class="<%= paritet%>">
+            <td  ><%=drzava.naziv%></td>
+            <td  ><%= drzava.iso_3116_alpha_3%></td>
+            <td  ><%= drzava.glavni_grad%></td>
+            <td  ><%= drzava.valuta%></td>
+            <td  ><%= drzava.pozivni_broj%></td>
+            <td  ><%= drzava.top_level_domena%></td>
+            <td  ><%= drzava.naziv_himne%></td>
+            <td  ><%= drzava.povrsina%></td>
+            <td  ><%= drzava.strana_voznje%></td>
+            <td  ><%= drzava.wikipedia_handle%></td>
+            
+            <td  > 
+            <% for (let jezik of jezici) { %>
+               <% if(jezik.iso_3116_alpha_3 == drzava.iso_3116_alpha_3){ %>
+                    <%= jezik.naziv%> (<%= jezik.iso_639%>)
+                <% } %> 
+            <% } %>
+            </td>
+        </tr>
+    <%element++; } %>
+    </table>
+
+    <% if (filter != "vaš_budući_podniz"){%>
+    <h3>Preuzmite Vaše filtrirane podatke</h3>
+
+    <div class="neparni">
+        <a href="http://127.0.0.1:5500/filtriraneDrzave.csv" download>filtriraneDrzave.csv</a> <br/>
+        <a href="http://127.0.0.1:5500/filtriraneDrzave.json" download>filtriraneDrzave.json</a>
+    </div>
+    <%}%>
+
+
+</body>
+
+</html>
