@@ -1,0 +1,425 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Drzave",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "jana.martinovic@fer.hr"
+    },
+    "license": {
+      "name": "Creative Commons Zero v1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "drzave",
+      "description": "pristup svim državama"
+    },
+    {
+      "name": "jezici",
+      "description": "pristup svim jezicima"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/drzave": {
+      "get": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Dohvaća sve države iz baze",
+        "operationId": "pristupDrzavama",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Drzave su uspjesno dohvacene",
+            "schema": {
+              "$ref": "#/definitions/Drzave"
+            }
+          }
+        }
+      }
+    },
+    "/jezici": {
+      "get": {
+        "tags": [
+          "jezici"
+        ],
+        "summary": "Dohvaća sve jezike iz baze",
+        "operationId": "pristupJezicima",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Jezici su uspjesno dohvaceni"
+          }
+        }
+      }
+    },
+    "/drzave/{id}": {
+      "get": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Dohvaća državu na temelju id-ja",
+        "operationId": "pristupDržaviPoId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Drzava je uspjesno dohvacena",
+            "schema": {
+              "$ref": "#/definitions/Drzave"
+            }
+          },
+          "404": {
+            "description": "Drzava s oznakom {id} nije pronadena"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Briše državu s određenim id-jem",
+        "operationId": "brisanjeDrzave",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Drzava je uspjesno obrisana"
+          },
+          "404": {
+            "description": "Drzava s oznakom {id} nije pronadena; neuspjesno brisanje"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Stvara novi zapis o državi",
+        "operationId": "stvaranjeDrzave",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Unesi parametre vezane uz državu",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DrzaveParametri"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Drzava je uspjesno stvorena"
+          },
+          "400": {
+            "description": "Drzava s oznakom {id} vec postoji; neuspjesno stvaranje"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Osvjezava podatke o državi s određenim id-jem",
+        "operationId": "osvjezavanjeDrzave",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Unesi parametre vezane uz državu",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DrzaveParametri"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Drzava je uspjesno updateana"
+          },
+          "404": {
+            "description": "Drzava s oznakom {id} nije pronadena"
+          }
+        }
+      }
+    },
+    "/jezici/{id}": {
+      "get": {
+        "tags": [
+          "jezici"
+        ],
+        "summary": "Dohvaća jezik na temelju id-ja",
+        "operationId": "pristupJezikuPoId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka jezika",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Jezik je uspjesno dohvacen",
+            "schema": {
+              "$ref": "#/definitions/Jezici"
+            }
+          },
+          "404": {
+            "description": "Jezik s oznakom {id} nije pronaden"
+          }
+        }
+      }
+    },
+    "/drzave/{id}/sluzbenijezici": {
+      "get": {
+        "tags": [
+          "jezici"
+        ],
+        "summary": "Dohvaća službene jezike države koja ima taj id",
+        "operationId": "pristupSluzbenimJezicima",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Drzava i njeni sluzbeni jezici su uspjesno dohvaceni",
+            "schema": {
+              "$ref": "#/definitions/Jezici"
+            }
+          },
+          "400": {
+            "description": "Drzava s oznakom {id} nije pronadena"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Drzave": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "drzave": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "iso_3116_alpha_3": {
+                    "type": "string"
+                  },
+                  "glavni_grad": {
+                    "type": "string"
+                  },
+                  "naziv": {
+                    "type": "string"
+                  },
+                  "valuta": {
+                    "type": "string"
+                  },
+                  "pozivni_broj": {
+                    "type": "string"
+                  },
+                  "top_level_domena": {
+                    "type": "string"
+                  },
+                  "naziv_himne": {
+                    "type": "string"
+                  },
+                  "povrsina": {
+                    "type": "number"
+                  },
+                  "strana_voznje": {
+                    "type": "string"
+                  },
+                  "wikipedia_handle": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Jezici": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "jezici": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "iso_639": {
+                    "type": "string"
+                  },
+                  "naziv": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "rel": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "DrzaveParametri": {
+      "type": "object",
+      "properties": {
+        "glavni_grad": {
+          "type": "string"
+        },
+        "naziv": {
+          "type": "string"
+        },
+        "valuta": {
+          "type": "string"
+        },
+        "pozivni_broj": {
+          "type": "string"
+        },
+        "top_level_domena": {
+          "type": "string"
+        },
+        "naziv_himne": {
+          "type": "string"
+        },
+        "povrsina": {
+          "type": "number"
+        },
+        "strana_voznje": {
+          "type": "string"
+        },
+        "wikipedia": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

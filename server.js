@@ -7,6 +7,7 @@ const db = require('./db');
 
 //uvoz modula s definiranom funkcionalnosti ruta
 const datatableRouter = require('./routes/datatable.routes');
+//const janaRouter = require('./routes/jana.routes'); 
 
 //middleware - predlošci (ejs)
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 
 //definicija ruta
 app.use('/', datatableRouter);
+//app.use('/', janaRouter);
 
 
 //pokretanje poslužitelja na portu 3000

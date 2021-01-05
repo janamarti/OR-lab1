@@ -34,65 +34,21 @@
     "wikipedia_handle": "Palau"
   },
   {
-    "naziv": "Honduras",
-    "iso_3116_alpha_3": "HND",
-    "glavni_grad": "Tegucigalpa",
+    "naziv": "Gabon",
+    "iso_3116_alpha_3": "GAB",
+    "glavni_grad": "Libreville",
     "jezici": [
       {
-        "iso_639": "spa",
-        "naziv": "španjolski"
+        "iso_639": "fra",
+        "naziv": "francuski"
       }
     ],
-    "valuta": "HNL",
-    "pozivni_broj": "+504",
-    "top_level_domena": ".hn",
-    "naziv_himne": "Himno Nacional de Honduras",
-    "povrsina": 112492,
+    "valuta": "XAF",
+    "pozivni_broj": "+241",
+    "top_level_domena": ".ga",
+    "naziv_himne": "La Concorde",
+    "povrsina": 267667,
     "strana_voznje": "desna",
-    "wikipedia_handle": "Honduras"
-  },
-  {
-    "naziv": "Novi Zeland",
-    "iso_3116_alpha_3": "NZL",
-    "glavni_grad": "Wellington",
-    "jezici": [
-      {
-        "iso_639": "eng",
-        "naziv": "engleski"
-      },
-      {
-        "iso_639": "mri",
-        "naziv": "maorski"
-      },
-      {
-        "iso_639": "nzs",
-        "naziv": "novozelandski znakovni"
-      }
-    ],
-    "valuta": "NZD",
-    "pozivni_broj": "+64",
-    "top_level_domena": ".nz",
-    "naziv_himne": "God Defend New Zealand",
-    "povrsina": 268021,
-    "strana_voznje": "lijeva",
-    "wikipedia_handle": "New_Zealand"
-  },
-  {
-    "naziv": "Ekvador",
-    "iso_3116_alpha_3": "ECU",
-    "glavni_grad": "Quito",
-    "jezici": [
-      {
-        "iso_639": "spa",
-        "naziv": "španjolski"
-      }
-    ],
-    "valuta": "USD",
-    "pozivni_broj": "+593",
-    "top_level_domena": ".ec",
-    "naziv_himne": "Salve, Oh Patria",
-    "povrsina": 283561,
-    "strana_voznje": "desna",
-    "wikipedia_handle": "Ecuador"
+    "wikipedia_handle": "Gabon"
   }
 ]
