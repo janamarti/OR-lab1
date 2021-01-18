@@ -118,7 +118,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Drzava je uspjesno obrisana"
+            "description": "Drzava je uspjesno obrisana",
+            "schema": {
+              "$ref": "#/definitions/Drzave"
+            }
           },
           "404": {
             "description": "Drzava s oznakom {id} nije pronadena; neuspjesno brisanje"
@@ -154,7 +157,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Drzava je uspjesno stvorena"
+            "description": "Drzava je uspjesno stvorena",
+            "schema": {
+              "$ref": "#/definitions/Drzave"
+            }
           },
           "400": {
             "description": "Drzava s oznakom {id} vec postoji; neuspjesno stvaranje"
@@ -190,7 +196,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Drzava je uspjesno updateana"
+            "description": "Drzava je uspjesno updateana",
+            "schema": {
+              "$ref": "#/definitions/Drzave"
+            }
           },
           "404": {
             "description": "Drzava s oznakom {id} nije pronadena"
@@ -261,6 +270,35 @@
           }
         }
       }
+    },
+    "/drzave/{id}/slike": {
+      "get": {
+        "tags": [
+          "drzave"
+        ],
+        "summary": "Dohvaća sliku zastave neke države na temelju id-ja države",
+        "operationId": "pristupSliciPoId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id je troslovna oznaka države",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "501": {
+            "description": "Method not implemented for requested resource"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -276,6 +314,17 @@
         "response": {
           "type": "object",
           "properties": {
+            "@context": {
+              "type": "object",
+              "properties": {
+                "glavni_grad": {
+                  "type": "string"
+                },
+                "valuta": {
+                  "type": "string"
+                }
+              }
+            },
             "drzave": {
               "type": "array",
               "items": {
